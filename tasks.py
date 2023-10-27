@@ -39,27 +39,27 @@ def fill_and_submit_sales_form(item):
     page = browser.page()
 
     # type conversions
-    if isinstance(item.payload["salestarget"], int):
-        target = item.payload["salestarget"]
-    else:    
+    if isinstance(item.payload["query"]["salestarget"], int):
+        target = item.payload["query"]["salestarget"]
+    else:
         # If it's not an integer, try to convert it from a string
         try:
-            target = int(item.payload["salestarget"])
+            target = int(item.payload["query"]["salestarget"])
         except ValueError:
-            raise TypeError(f"Cannot convert {item.payload['salestarget']} to integer")
-        
+            raise TypeError(f"Cannot convert {item.payload['query']['salestarget']} to integer")
 
-    if isinstance(item.payload["salesresult"], int):
-        result = item.payload["salesresult"]
-    else:    
+
+    if isinstance(item.payload["query"]["salesresult"], int):
+        result = item.payload["query"]["salesresult"]
+    else:
         # If it's not an integer, try to convert it from a string
         try:
-            result = int(item.payload["salesresult"])
+            result = int(item.payload["query"]["salesresult"])
         except ValueError:
-            raise TypeError(f"Cannot convert {item.payload['salesresult']} to integer")
+            raise TypeError(f"Cannot convert {item.payload['query']['salesresult']} to integer")
 
-    page.fill("#firstname", item.payload["firstname"])
-    page.fill("#lastname", item.payload["lastname"])
+    page.fill("#firstname", item.payload["query"]["firstname"])
+    page.fill("#lastname", item.payload["query"]["lastname"])
     page.fill("#salesresult", str(result))
 
     # map the sales target value to dropdown values

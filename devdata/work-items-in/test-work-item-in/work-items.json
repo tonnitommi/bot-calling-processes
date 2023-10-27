@@ -1,0 +1,11 @@
+[
+  {
+      "payload": {
+        "firstname": "Jörn",
+        "lastname": "Björn",
+        "salesresult": 12221,
+        "salestarget": 10000
+      },
+      "files": {}
+  }
+]

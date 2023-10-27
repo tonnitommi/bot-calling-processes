@@ -1,10 +1,7 @@
 [
   {
       "payload": {
-        "firstname": "Jörn",
-        "lastname": "Björn",
-        "salesresult": 12221,
-        "salestarget": 10000
+        "query": "{\"firstname\": \"Tommi\", \"lastname\": \"H\", \"salesresult\": \"121212\", \"salestarget\": 20000}"
       },
       "files": {}
   }

@@ -38,6 +38,8 @@ def fill_and_submit_sales_form(item):
     """Fills in the sales data and click the 'Submit' button"""
     page = browser.page()
 
+    print(item.payload["query"])
+
     # type conversions
     if isinstance(item.payload["query"]["salestarget"], int):
         target = item.payload["query"]["salestarget"]

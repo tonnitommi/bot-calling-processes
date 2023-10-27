@@ -76,7 +76,9 @@ def fill_and_submit_sales_form(item):
 
     page.click("text=Submit")
 
-    if result < target:
+    if result < 0.5 * target:
+        outload = "POOR"
+    elif result < target:
         outload = "BELOW"
     else:
         outload = "ABOVE"

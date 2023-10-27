@@ -1,5 +1,6 @@
 from robocorp.tasks import task
 from robocorp import browser, workitems
+import json
 
 @task
 def report_sales_data():
@@ -39,6 +40,10 @@ def fill_and_submit_sales_form(item):
     page = browser.page()
 
     print(item.payload["query"])
+
+    data = json.loads(item.payload["query"])
+
+    print(json.dumps(data, indent=4))
 
     # type conversions
     if isinstance(item.payload["query"]["salestarget"], int):
